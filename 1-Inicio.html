@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio | Briquetas Centeno</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ======== ENCABEZADO ======== -->
+  <header>
+    <div class="logo">Briquetas Centeno</div>
+    <nav id="nav-menu">
+      <a href="1-inicio.html" class="active">Inicio</a>
+      <a href="2-productos.html">Productos</a>
+      <a href="4-nosotros.html">Nosotros</a>
+      <a href="3-contactenos.html">Contáctenos</a>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </header>
+
+  <!-- ======== SECCIÓN PRINCIPAL ======== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Carbón ecológico de alta calidad</h1>
+      <p>Fabricamos briquetas sostenibles, eficientes y comprometidas con el medio ambiente.</p>
+      <a href="2-productos.html" class="btn">Ver productos</a>
+    </div>
+  </section>
+
+  <!-- ======== SECCIÓN DESTACADOS ======== -->
+  <section class="features">
+    <div class="feature">
+      <img src="img/icono-eco.png" alt="Ecológico" />
+      <h3>Ecológico</h3>
+      <p>Producidas a partir de residuos vegetales sin químicos dañinos.</p>
+    </div>
+    <div class="feature">
+      <img src="img/icono-eficiencia.png" alt="Eficiente" />
+      <h3>Eficiente</h3>
+      <p>Mayor poder calorífico y menor emisión de humo.</p>
+    </div>
+    <div class="feature">
+      <img src="img/icono-calidad.png" alt="Calidad" />
+      <h3>Certificado</h3>
+      <p>Cumple con estándares exigidos por mercados internacionales.</p>
+    </div>
+  </section>
+
+  <!-- ======== SECCIÓN LLAMADO A LA ACCIÓN ======== -->
+  <section class="cta">
+    <h2>Únete al cambio hacia un consumo más limpio</h2>
+    <a href="3-Contacteno.Html" class="btn btn-light">Contáctenos</a>
+  </section>
+
+  <!-- ======== PIE DE PÁGINA ======== -->
+  <footer>
+    <p>&copy; 2025 Briquetas Centeno. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('nav-menu');
+    toggle.onclick = () => menu.classList.toggle('active');
+  </script>
+
+</body>
+</html>

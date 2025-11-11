@@ -1,0 +1,87 @@
+<header>
+  <div class="logo">Briquetas Centeno</div>
+  <nav id="nav-menu">
+    <a href="1-Inicio.html">Inicio</a>
+    <a href="2-Productos.Html">Productos</a>
+    <a href="4-Nosotros.html">Nosotros</a>
+    <a href="3-Contacteno.Html">Contáctenos</a>
+  </nav>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+</header>
+
+
+
+
+
+##################
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briquetas Centeno | Nosotros</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <!-- 🔸 CONTENIDO PRINCIPAL -->
+  <main class="4-Nosotros">
+
+    <section class="intro">
+      <h1>Sobre Nosotros</h1>
+      <p>
+        En <strong>Briquetas Centeno</strong> somos una empresa comprometida con el medio ambiente 
+        y la producción sostenible de briquetas de carbón ecológicas. 
+        Trabajamos para ofrecer productos de alta calidad que ayuden a reducir 
+        el impacto ambiental y mejoren la eficiencia energética.
+      </p>
+    </section>
+
+    <section class="mision-vision">
+      <div class="bloque">
+        <h2>Misión</h2>
+        <p>
+          Producir briquetas de carbón ecológicas que brinden una alternativa limpia y eficiente 
+          al consumo de leña o carbón tradicional, promoviendo la sostenibilidad ambiental 
+          y el desarrollo económico local.
+        </p>
+      </div>
+      <div class="bloque">
+        <h2>Visión</h2>
+        <p>
+          Ser líderes en la región en la producción de biocombustibles sostenibles, 
+          contribuyendo al bienestar del planeta y a la economía circular.
+        </p>
+      </div>
+    </section>
+
+    <section class="valores">
+      <h2>Nuestros Valores</h2>
+      <ul>
+        <li>🌱 Compromiso ambiental</li>
+        <li>🤝 Honestidad y transparencia</li>
+        <li>⚙️ Innovación constante</li>
+        <li>👥 Trabajo en equipo</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- 🔸 PIE DE PÁGINA -->
+  <footer>
+    <p>&copy; 2025 Briquetas Centeno. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- 🔸 SCRIPT MENÚ -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

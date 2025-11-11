@@ -1,0 +1,79 @@
+<header>
+  <div class="logo">Briquetas Centeno</div>
+  <nav id="nav-menu">
+    <a href="1-Inicio.html">Inicio</a>
+    <a href="2-Productos.Html">Productos</a>
+    <a href="4-Nosotros.html">Nosotros</a>
+    <a href="3-Contacteno.Html">Contáctenos</a>
+  </nav>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+</header>
+
+
+##################
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briquetas Centeno | Contáctenos</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Íconos gratuitos de Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- 🔸 CONTENIDO PRINCIPAL -->
+  <main class="contacto">
+
+    <section class="contacto-info">
+      <h1>Contáctenos</h1>
+      <p>Estamos disponibles para atenderte. Escríbenos o síguenos en nuestras redes sociales.</p>
+
+      <!-- Formulario -->
+      <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo" required>
+        <textarea placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+
+      <!-- Redes Sociales -->
+      <div class="redes">
+        <h3>También puedes encontrarnos en:</h3>
+        <div class="iconos-redes">
+          <a href="https://www.facebook.com/" target="_blank" class="facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" class="instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://x.com/" target="_blank" class="x">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a href="https://wa.me/50500000000" target="_blank" class="whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🔸 PIE DE PÁGINA -->
+  <footer>
+    <p>&copy; 2025 Briquetas Centeno. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- 🔸 SCRIPT MENÚ -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

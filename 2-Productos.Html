@@ -1,0 +1,53 @@
+<header>
+  <div class="logo">Briquetas Centeno</div>
+  <nav id="nav-menu">
+    <a href="1-Inicio.html">Inicio</a>
+    <a href="2-Productos.Html">Productos</a>
+    <a href="4-Nosotros.html">Nosotros</a>
+    <a href="3-Contacteno.Html">Contáctenos</a>
+  </nav>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+</header>>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos | Briquetas Centeno</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <section class="products">
+    <h1>Nuestros Productos</h1>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="img/briqueta1.jpg" alt="Briqueta estándar" />
+        <h3>Briqueta Estándar</h3>
+        <p>Eficiente y duradera. Ideal para hogares y restaurantes.</p>
+      </div>
+      <div class="product-card">
+        <img src="img/briqueta2.jpg" alt="Briqueta premium" />
+        <h3>Briqueta Premium</h3>
+        <p>Mayor densidad, encendido rápido y baja emisión de humo.</p>
+      </div>
+      <div class="product-card">
+        <img src="img/briqueta3.jpg" alt="Carbón para exportación" />
+        <h3>Briqueta Exportación</h3>
+        <p>Calidad certificada para mercados internacionales.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Briquetas Centeno. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('nav-menu');
+    toggle.onclick = () => menu.classList.toggle('active');
+  </script>
+</body>
+</html>
