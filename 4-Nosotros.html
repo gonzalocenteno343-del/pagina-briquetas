@@ -1,87 +1,216 @@
-<header>
-  <div class="logo">Briquetas Centeno</div>
-  <nav id="nav-menu">
-    <a href="1-Inicio.html">Inicio</a>
-    <a href="2-Productos.Html">Productos</a>
-    <a href="4-Nosotros.html">Nosotros</a>
-    <a href="3-Contacteno.Html">Contáctenos</a>
-  </nav>
-  <div class="menu-toggle" id="menu-toggle">☰</div>
-</header>
-
-
-
-
-
-##################
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Briquetas Centeno | Nosotros</title>
+  <title>Nosotros | Briquetas la Milagrito</title>
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- ==================== INICIO: ESTILOS SOLO PARA ESTA PÁGINA ==================== -->
+  <style>
+    /* --- Contenedor principal de la página --- */
+    main.page-about {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* --- SECCIÓN DE INTRODUCCIÓN --- */
+    .intro .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Dos columnas: texto e imagen */
+      gap: 3rem; /* Espacio entre el texto y la imagen */
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .intro-text h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .intro-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .intro-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* --- SECCIÓN MISIÓN Y VISIÓN --- */
+    .mision-vision .content-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .bloque.card {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bloque.card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .bloque.card h2 {
+      font-size: 1.8rem;
+      color: #0056b3; /* Un color que destaque */
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.5rem;
+    }
+
+    .bloque.card p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* --- SECCIÓN DE VALORES --- */
+    .valores {
+      text-align: center;
+    }
+
+    .valores h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .valores-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas para los valores */
+      gap: 1.5rem;
+    }
+
+    .valores-list li {
+      background-color: #f0f8ff; /* Un fondo suave */
+      padding: 1.5rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #444;
+      border-left: 5px solid #0056b3; /* Un borde a la izquierda para destacar */
+      transition: background-color 0.3s ease;
+    }
+
+    .valores-list li:hover {
+      background-color: #e6f3ff;
+    }
+
+    /* --- RESPONSIVIDAD PARA MÓVILES --- */
+    @media (max-width: 768px) {
+      .intro .content-wrapper,
+      .mision-vision .content-wrapper,
+      .valores-list {
+        grid-template-columns: 1fr; /* Todo en una sola columna */
+      }
+
+      .intro-text h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <!-- ==================== FIN: ESTILOS SOLO PARA ESTA PÁGINA ==================== -->
+
 </head>
 <body>
 
+  <!-- ======== ENCABEZADO ======== -->
+  <header>
+    <div class="logo">Briquetas la Milagrito</div>
+    <nav id="nav-menu" aria-label="Navegación principal">
+      <a href="1-inicio.html">Inicio</a>
+      <a href="2-productos.html">Productos</a>
+      <a href="4-nosotros.html" class="active">Nosotros</a>
+      <a href="3-contactenos.html">Contáctenos</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+      <span class="hamburger-icon">☰</span>
+    </button>
+  </header>
 
-  <!-- 🔸 CONTENIDO PRINCIPAL -->
-  <main class="4-Nosotros">
+  <!-- ======== CONTENIDO PRINCIPAL ======== -->
+  <main class="page-about">
 
+    <!-- SECCIÓN DE INTRODUCCIÓN -->
     <section class="intro">
-      <h1>Sobre Nosotros</h1>
-      <p>
-        En <strong>Briquetas Centeno</strong> somos una empresa comprometida con el medio ambiente 
-        y la producción sostenible de briquetas de carbón ecológicas. 
-        Trabajamos para ofrecer productos de alta calidad que ayuden a reducir 
-        el impacto ambiental y mejoren la eficiencia energética.
-      </p>
+      <div class="content-wrapper">
+        <div class="intro-text">
+          <h1>Sobre Nosotros</h1>
+          <p>
+            En <strong>Briquetas la Milagrito</strong> somos una empresa comprometida con el medio ambiente 
+            y la producción sostenible de briquetas de carbón ecológicas. 
+            Trabajamos para ofrecer productos de alta calidad que ayuden a reducir 
+            el impacto ambiental y mejoren la eficiencia energética.
+          </p>
+        </div>
+        <div class="intro-image">
+          <!-- REEMPLAZA ESTA URL CON LA IMAGEN DE TU EMPRESA -->
+          <img src="proyecto/img/MARIA.jpg" alt="Imagen representativa de Briquetas la Milagrito">
+        </div>
+      </div>
     </section>
 
+    <!-- SECCIÓN MISIÓN Y VISIÓN -->
     <section class="mision-vision">
-      <div class="bloque">
-        <h2>Misión</h2>
-        <p>
-          Producir briquetas de carbón ecológicas que brinden una alternativa limpia y eficiente 
-          al consumo de leña o carbón tradicional, promoviendo la sostenibilidad ambiental 
-          y el desarrollo económico local.
-        </p>
-      </div>
-      <div class="bloque">
-        <h2>Visión</h2>
-        <p>
-          Ser líderes en la región en la producción de biocombustibles sostenibles, 
-          contribuyendo al bienestar del planeta y a la economía circular.
-        </p>
+      <div class="content-wrapper">
+        <article class="bloque card">
+          <h2>Misión</h2>
+          <p>
+            Producir briquetas de carbón ecológicas 
+            que brinden una alternativa limpia y eficiente 
+            al consumo de leña o carbón tradicional, promoviendo 
+            la sostenibilidad ambiental 
+            y el desarrollo económico local.
+          </p>
+        </article>
+        <article class="bloque card">
+          <h2>Visión</h2>
+          <p>
+            Ser líderes en la región en la producción de
+             biocombustibles sostenibles, 
+            contribuyendo al bienestar del planeta 
+            y a la economía circular.
+          </p>
+        </article>
       </div>
     </section>
 
+    <!-- SECCIÓN DE VALORES -->
     <section class="valores">
-      <h2>Nuestros Valores</h2>
-      <ul>
-        <li>🌱 Compromiso ambiental</li>
-        <li>🤝 Honestidad y transparencia</li>
-        <li>⚙️ Innovación constante</li>
-        <li>👥 Trabajo en equipo</li>
-      </ul>
+      <div class="content-wrapper">
+        <h2>Nuestros Valores</h2>
+        <ul class="valores-list">
+          <li>Compromiso ambiental</li>
+          <li>Honestidad y transparencia</li>
+          <li>Innovación constante</li>
+          <li>Trabajo en equipo</li>
+        </ul>
+      </div>
     </section>
 
   </main>
+  <!-- Fin del contenido principal -->
 
-  <!-- 🔸 PIE DE PÁGINA -->
+  <!-- ======== PIE DE PÁGINA ======== -->
   <footer>
-    <p>&copy; 2025 Briquetas Centeno. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Briquetas la Milagrito. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- 🔸 SCRIPT MENÚ -->
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    toggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  </script>
-
+  <script src="script.js" defer></script>
 </body>
 </html>

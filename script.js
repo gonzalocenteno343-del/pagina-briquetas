@@ -1,3 +1,10 @@
-const toggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('nav-menu');
-toggle.onclick = () => menu.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    }
+});

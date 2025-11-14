@@ -3,67 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio | Briquetas Centeno</title>
+  <title>Inicio | Briquetas la milagrito</title>
   <link rel="stylesheet" href="styles.css" />
+  
+  <!-- ==================== INICIO: ESTILOS SOLO PARA ESTA PÁGINA ==================== -->
+<style>
+  /* --- 1. Resetear espaciado del contenido principal --- */
+  main {
+    padding: 0;
+  }
+
+  /* --- 2. Layout en Cuadrícula para las características --- */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+    padding: 2rem 0;
+    margin: 0;
+  }
+
+  /* --- 3. Estilos para el TÍTULO de la sección --- */
+  .features h2 {
+    grid-column: 1 / -1; /* <-- Hace que el título ocupe todo el ancho de la cuadrícula */
+    font-size: 2.5rem; /* Tamaño de fuente grande */
+    color: #333; /* Color del texto */
+    margin-bottom: 2rem; /* Espacio debajo del título */
+  }
+
+  /* --- 4. Estilos para las imágenes --- */
+  .feature img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  /* --- 5. Estilos para las tarjetas de características --- */
+  .feature {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 0;
+  }
+
+  .feature:hover {
+    transform: translateY(-5px);
+  }
+
+  /* --- 6. Eliminar el espacio entre las secciones --- */
+  .features {
+    padding-bottom: 0;
+  }
+
+  .cta {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  /* --- 7. Responsividad para móviles y tablets --- */
+  @media (max-width: 900px) {
+    .features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .features {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .features h2 {
+      font-size: 2rem; /* Título un poco más pequeño en móviles */
+    }
+  }
+</style>
+<!-- ==================== FIN: ESTILOS SOLO PARA ESTA PÁGINA ==================== -->
 </head>
 <body>
 
   <!-- ======== ENCABEZADO ======== -->
   <header>
-    <div class="logo">Briquetas Centeno</div>
-    <nav id="nav-menu">
+    <div class="logo">Briquetas la milagrito </div>
+    <nav id="nav-menu" aria-label="Navegación principal">
       <a href="1-inicio.html" class="active">Inicio</a>
       <a href="2-productos.html">Productos</a>
       <a href="4-nosotros.html">Nosotros</a>
       <a href="3-contactenos.html">Contáctenos</a>
     </nav>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+      <span class="hamburger-icon">☰</span>
+    </button>
   </header>
 
-  <!-- ======== SECCIÓN PRINCIPAL ======== -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Carbón ecológico de alta calidad</h1>
-      <p>Fabricamos briquetas sostenibles, eficientes y comprometidas con el medio ambiente.</p>
-      <a href="2-productos.html" class="btn">Ver productos</a>
-    </div>
-  </section>
+  <!-- ======== CONTENIDO PRINCIPAL ======== -->
+  <main>
+    <!-- ======== SECCIÓN PRINCIPAL (HERO) ======== -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Carbón ecológico de alta calidad</h1>
+        <p>Fabricamos briquetas sostenibles, eficientes y comprometidas con el medio ambiente.</p>
+        <a href="2-productos.html" class="btn">Ver productos</a>
+      </div>
+    </section>
 
-  <!-- ======== SECCIÓN DESTACADOS ======== -->
-  <section class="features">
-    <div class="feature">
-      <img src="img/icono-eco.png" alt="Ecológico" />
-      <h3>Ecológico</h3>
-      <p>Producidas a partir de residuos vegetales sin químicos dañinos.</p>
-    </div>
-    <div class="feature">
-      <img src="img/icono-eficiencia.png" alt="Eficiente" />
-      <h3>Eficiente</h3>
-      <p>Mayor poder calorífico y menor emisión de humo.</p>
-    </div>
-    <div class="feature">
-      <img src="img/icono-calidad.png" alt="Calidad" />
-      <h3>Certificado</h3>
-      <p>Cumple con estándares exigidos por mercados internacionales.</p>
-    </div>
-  </section>
+    <!-- ======== SECCIÓN DESTACADOS (FEATURES) ======== -->
+    <section class="features">
+      <h2 class="visually-hidden">Nuestras Características</h2>
+      <article class="feature">
+        <img src="proyecto/img/Viverolamilagrito.jpg" alt="Icono de una hoja representando lo ecológico" />
+        <h3>Ecológico</h3>
+        <p>Producidas a partir de residuos vegetales sin químicos dañinos.</p>
+      </article>
+      <article class="feature">
+        <img src="proyecto/img/EfectoCalorifico.jpg" alt="Icono de un rayo representando la eficiencia" />
+        <h3>Eficiente</h3>
+        <p>Mayor poder calorífico y menor emisión de humo.</p>
+      </article>
+      <article class="feature">
+        <img src="proyecto/img/Certificadomejor.jpg" alt="Icono de un sello de aprobación representando la calidad" />
+        <h3>Certificado</h3>
+        <p>Cumple con estándares exigidos por mercados internacionales.</p>
+      </article>
+    </section>
 
-  <!-- ======== SECCIÓN LLAMADO A LA ACCIÓN ======== -->
-  <section class="cta">
-    <h2>Únete al cambio hacia un consumo más limpio</h2>
-    <a href="3-Contacteno.Html" class="btn btn-light">Contáctenos</a>
-  </section>
+    <!-- ======== SECCIÓN LLAMADO A LA ACCIÓN (CTA) ======== -->
+    <section class="cta">
+      <h2>De la montaña a la ciudad somos calidad</h2>
+      <a href="3-contactenos.html" class="btn btn-light">Contáctenos</a>
+    </section>
+  </main>
+  <!-- Fin del contenido principal -->
 
   <!-- ======== PIE DE PÁGINA ======== -->
   <footer>
-    <p>&copy; 2025 Briquetas Centeno. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Briquetas la Milagrito . Todos los derechos reservados.</p>
   </footer>
 
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('nav-menu');
-    toggle.onclick = () => menu.classList.toggle('active');
-  </script>
-
+  <script src="script.js" defer></script>
 </body>
 </html>

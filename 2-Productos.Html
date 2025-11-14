@@ -1,53 +1,241 @@
-<header>
-  <div class="logo">Briquetas Centeno</div>
-  <nav id="nav-menu">
-    <a href="1-Inicio.html">Inicio</a>
-    <a href="2-Productos.Html">Productos</a>
-    <a href="4-Nosotros.html">Nosotros</a>
-    <a href="3-Contacteno.Html">Contáctenos</a>
-  </nav>
-  <div class="menu-toggle" id="menu-toggle">☰</div>
-</header>>
-
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Productos | Briquetas Centeno</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Productos | Briquetas la Milagrito</title>
+  
+  <!-- ======================================= -->
+  <!-- ========= CSS INCLUIDO AQUÍ ========= -->
+  <!-- ======================================= -->
+  <style>
+    /* --- PALETA DE COLORES --- */
+    :root {
+      --primary-green: #2E7D32;
+      --dark-green: #1B5E20;
+      --accent-color: #FFC107;
+      --dark-bg: #121212;
+      --light-bg: #F4F4F4;
+      --white: #FFFFFF;
+      --text-dark: #212121;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* --- ESTILOS GLOBALES --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* --- HEADER --- */
+    header {
+      background-color: var(--dark-bg);
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary-green);
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: var(--accent-color);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--accent-color);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: var(--primary-green);
+      cursor: pointer;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-top: 3px solid var(--primary-green);
+    }
+
+    /* --- ESTILOS DE LA SECCIÓN PRODUCTOS --- */
+    .products {
+      padding: 5rem 1.5rem;
+      text-align: center;
+      background-color: var(--light-bg);
+    }
+
+    .products .product-grid {
+      display: grid; /* Usamos Grid para un mejor control */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
+      gap: 3rem;
+      margin-top: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .product-card {
+      background-color: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden; /* ¡Importante para que la imagen respete el borde redondeado! */
+      border-top: 5px solid var(--primary-green);
+      display: flex;
+      flex-direction: column; /* Para que el contenido se organice bien */
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px; /* Altura fija para todas */
+      object-fit: cover; /* Cubre el espacio sin deformar */
+      display: block;
+    }
+
+    .product-card h2 {
+      margin: 1.5rem 1rem 0.5rem 1rem;
+      color: var(--primary-green);
+      font-size: 1.4rem;
+    }
+
+    .product-card p {
+      padding: 0 1rem 1.5rem 1rem;
+      margin: 0;
+      flex-grow: 1; /* Hace que el párrafo ocupe el espacio restante */
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--dark-bg);
+        flex-direction: column;
+        padding: 1rem;
+        width: 250px;
+        border-radius: 0 0 8px 8px;
+        box-shadow: var(--shadow);
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+
 </head>
-<body>
 
-  <section class="products">
-    <h1>Nuestros Productos</h1>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="img/briqueta1.jpg" alt="Briqueta estándar" />
-        <h3>Briqueta Estándar</h3>
-        <p>Eficiente y duradera. Ideal para hogares y restaurantes.</p>
-      </div>
-      <div class="product-card">
-        <img src="img/briqueta2.jpg" alt="Briqueta premium" />
-        <h3>Briqueta Premium</h3>
-        <p>Mayor densidad, encendido rápido y baja emisión de humo.</p>
-      </div>
-      <div class="product-card">
-        <img src="img/briqueta3.jpg" alt="Carbón para exportación" />
-        <h3>Briqueta Exportación</h3>
-        <p>Calidad certificada para mercados internacionales.</p>
-      </div>
-    </div>
-  </section>
 
+  <!-- ======== ENCABEZADO ======== -->
+  <header>
+    <div class="logo">Briquetas la Milagrito</div>
+    <nav id="nav-menu" aria-label="Navegación principal">
+      <a href="1-inicio.html">Inicio</a>
+      <a href="2-productos.html" class="active">Productos</a>
+      <a href="4-nosotros.html">Nosotros</a>
+      <a href="3-contactenos.html">Contáctenos</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+      <span class="hamburger-icon">☰</span>
+    </button>
+  </header>
+
+  <!-- ======== CONTENIDO PRINCIPAL ======== -->
+  <main>
+    <section class="products">
+      <h1>Nuestros Productos</h1>
+      <div class="product-grid">
+        <!-- Producto 1 con Imagen de Prueba -->
+        <article class="product-card" itemscope itemtype="http://schema.org/Product">
+          <img src="proyecto/img/Briquetas0.jpg" alt="Foto de la Briqueta Estándar" itemprop="image" />
+          <h2 itemprop="name">Briqueta de 10kg</h2>
+          <p itemprop="description">Eficiente y duradera. Ideal para hogares y restaurantes.</p>
+        </article>
+        
+        <!-- Producto 2 con Imagen de Prueba -->
+        <article class="product-card" itemscope itemtype="http://schema.org/Product">
+          <img src="proyecto/img/Briquetas03.jpg" alt="Foto de la Briqueta Premium" itemprop="image" />
+          <h2 itemprop="name">Carbon Vegetal 25kg </h2>
+          <p itemprop="description">Mayor densidad, encendido rápido y baja emisión de humo.</p>
+        </article>
+        
+        <!-- Producto 3 con Imagen de Prueba -->
+        <article class="product-card" itemscope itemtype="http://schema.org/Product">
+          <img src="proyecto/img/Briquetas02.jpg" alt="Foto de la Briqueta para Exportación" itemprop="image" />
+          <h2 itemprop="name">Ferti Carbon </h2>
+          <p itemprop="description">Calidad ambiental directa a sus manos.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======== PIE DE PÁGINA ======== -->
   <footer>
-    <p>&copy; 2025 Briquetas Centeno. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Briquetas la Milagrito. Todos los derechos reservados.</p>
   </footer>
 
   <script>
     const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('nav-menu');
-    toggle.onclick = () => menu.classList.toggle('active');
+    const navMenu = document.getElementById('nav-menu');
+    toggle.onclick = () => navMenu.classList.toggle('active');
   </script>
+
 </body>
 </html>
