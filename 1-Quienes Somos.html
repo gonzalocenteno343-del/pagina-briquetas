@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nosotros | Briquetas la Milagrito</title>
+  <title>Quienes Somos | Briquetas la Milagrito</title>
   <link rel="stylesheet" href="styles.css">
+   <!--esto de aqui es para que salgan los link de las redes sociales-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Para que el logo aparezca en la pestaña de busqueda lit gozalo jskdjas esta quedando cool xd -->
+  <link rel="icon" type="image/png" href="proyecto/img/LOGO REAL.png">
 
 
 </head>
@@ -12,13 +17,30 @@
 
   <!-- ======== ENCABEZADO ======== -->
   <header>
-    <div class="logo">Briquetas la Milagrito</div>
-    <nav id="nav-menu" aria-label="Navegación principal">
-      <a href="1-inicio.html">Inicio</a>
-      <a href="2-productos.html">Productos</a>
-      <a href="4-Quienes Somos.html" class="active">Quienes somos</a>
-      <a href="3-contactenos.html">Contáctenos</a>
-    </nav>
+    
+    <!-- Aqui gonzalo es para que el logo aparezca en la barra de arriba y que al tocarlo se devuelva al inicio xd-->
+    <a href="1-inicio.html" class="logo">
+  <img src="proyecto/img/LOGO REAL.png" alt="Briquetas la Milagrito">
+</a>
+<nav id="nav-menu" aria-label="Navegación principal">
+    <ul>
+        <li><a href="01-Inicio.html">Inicio</a></li>
+        <li><a href="1-Quienes Somos.html" class="active">Quienes Somos</a></li>
+        <li><a href="2-RSE.html">Responsabilidad Social</a></li>
+        
+        <!-- Aquí empieza el menú desplegable para "Productos" -->
+        <li class="dropdown">
+            <a href="3-Productos.Html">Productos</a>
+            <ul class="dropdown-menu">
+                <li><a href="3-Productos.Html#briqueta">Briqueta de 10kg</a></li>
+                <li><a href="3-Productos.Html#carbon">Carbón Vegetal 25kg</a></li>
+                <li><a href="3-Productos.Html#ferti">Ferti Carbon</a></li>
+            </ul>
+        </li>
+        <!-- Fin del menú desplegable -->
+        <li><a href="4-Contactenos.Html">Contactenos</a></li>
+    </ul>
+</nav>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
       <span class="hamburger-icon">☰</span>
     </button>
@@ -86,6 +108,21 @@
 
   </main>
   <!-- Fin del contenido principal -->
+
+ <!-- Redes Sociales -->
+      <div class="redes">
+        <h3>También puedes encontrarnos en:</h3>
+        <div class="iconos-redes">
+          <a href="https://www.facebook.com/share/1A9APGk63H/" target="_blank" class="facebook" rel="noopener noreferrer">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=50581827412" target="_blank" class="whatsapp" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+   
+
 
   <!-- ======== PIE DE PÁGINA ======== -->
   <footer>

@@ -1,36 +1,32 @@
 /* =============================================================================
 
-   HOJA DE ESTILOS PRINCIPAL - Briquetas la Milagrito
+   HOJA DE ESTILOS PRINCIPAL - Briquetas la Milagrito (VERSIÓN FINAL)
    
    ============================================================================= */
 
 
 /* ==========================================================================
    1. VARIABLES GLOBALES (PALETA DE COLORES)
-   Gonzalo: Aquí defines los colores de tu marca. Si quieres cambiar un
-   color en todo el sitio, solo tienes que modificarlo aquí.
    ========================================================================== */
 :root {
-  --primary-green: #2E7D32; /* Un verde fuerte y profesional */
-  --dark-green: #1B5E20;   /* Un verde más oscuro para hover */
-  --accent-color: #FFC107;  /* Un amarillo/ámbar para dar un toque de energía */
-  --dark-bg: #121212;       /* Un fondo casi negro para el header/footer */
-  --light-bg: #F4F4F4;      /* Un fondo gris muy claro para el cuerpo */
+  --primary-green: #2E7D32;
+  --dark-green: #1B5E20;
+  --accent-color: #FFC107;
+  --dark-bg: #121212;
+  --light-bg: #F4F4F4;
   --white: #FFFFFF;
   --text-dark: #212121;
-  --shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombras más profundas */
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 
 /* ==========================================================================
    2. ESTILOS GLOBALES Y TIPOGRAFÍA BASE
-   Gonzalo: Estas reglas se aplican a toda la web. Son la base sobre la
-   que se construye el resto de los estilos.
    ========================================================================== */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Hace que el padding y el border no sumen al tamaño total */
+  box-sizing: border-box;
 }
 
 body {
@@ -47,11 +43,9 @@ main {
 
 /* ==========================================================================
    3. LAYOUT: HEADER, NAVEGACIÓN Y LOGO
-   Gonzalo: Aquí controlas la apariencia de la cabecera, el menú de
-   navegación y, lo más importante, el tamaño de tu logo.
    ========================================================================== */
 header {
-  background-color: var(--dark-bg);
+  background-color: var(--dark-green);
   color: var(--white);
   display: flex;
   justify-content: space-between;
@@ -64,53 +58,112 @@ header {
   transition: all 0.3s ease;
 }
 
-/* Estilos para el contenedor del logo (el enlace <a>) */
 .logo {
   display: block;
-  line-height: 0; /* Elimina un pequeño espacio extra que aparece debajo de las imágenes */
+  line-height: 0;
 }
 
-/* ESTA ES LA REGLA CLAVE para tu logo. Fija su altura para que no se vea gigante. */
 .logo img {
-  height: 60px; /* Ajusta este valor si quieres el logo más grande o más pequeño */
-  width: auto;  /* Mantiene la proporción original de la imagen para que no se deforme */
+  height: 60px;
+  width: auto;
   display: block;
 }
 
-nav a {
+/* --- ESTILOS PRINCIPALES DE NAVEGACIÓN --- */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
   color: var(--white);
   text-decoration: none;
-  margin: 0 1rem;
   font-weight: 600;
   position: relative;
+  padding: 0.5rem 0;
   transition: color 0.3s ease;
 }
 
-/* Efecto subrayado animado para los enlaces */
-nav a::after {
+nav ul li a::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -5px;
-  left: 50%;
-  background-color: var(--accent-color);
-  transition: all 0.3s ease;
-}
-
-nav a:hover::after,
-nav a.active::after {
-  width: 100%;
+  bottom: 0;
   left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
 }
 
-nav a:hover,
-nav a.active {
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--accent-color);
 }
 
+/* --- ESTILOS DEL MENÚ DESPLEGABLE (DROPDOWN) - ESTILO VERDE/BLANCO --- */
+nav ul li.dropdown {
+  position: relative;
+}
+
+nav ul li.dropdown .dropdown-menu {
+  /* Ocultar el menú por defecto en todas las pantallas */
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0; /* Se alinea a la derecha como en tu código original */
+  background-color: var(--white); /* Fondo blanco */
+  min-width: 220px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  z-index: 1001;
+}
+
+/* Mostrar el menú al pasar el ratón SOLO en pantallas más grandes que 768px */
+@media (min-width: 769px) {
+  nav ul li.dropdown:hover .dropdown-menu {
+    display: block; /* Esto hace que el menú aparezca */
+  }
+}
+
+/* Estilos para los elementos dentro del menú desplegable */
+nav ul li.dropdown .dropdown-menu li {
+  width: 100%;
+}
+
+nav ul li.dropdown .dropdown-menu li a {
+  display: block;
+  padding: 15px;
+  color: var(--primary-green); /* <-- LETRA VERDE POR DEFECTO */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+nav ul li.dropdown .dropdown-menu li a::after {
+  display: none; /* Quita la línea de subrayado animada para los items del submenú */
+}
+
+/* Efecto al pasar el ratón: Fondo Verde y Letra Blanca */
+nav ul li.dropdown .dropdown-menu li a:hover {
+  background-color: var(--primary-green); /* <-- FONDO VERDE AL PASAR EL RATÓN */
+  color: var(--white); /* <-- LETRA BLANCA AL PASAR EL RATÓN */
+}
+
+/* --- BOTÓN DE MENÚ MÓVIL --- */
 .menu-toggle {
-  display: none; /* Por defecto, el botón de menú está oculto en pantallas grandes */
+  display: none;
   font-size: 1.8rem;
   background: none;
   border: none;
@@ -136,24 +189,21 @@ footer {
   border-top: 3px solid var(--primary-green);
 }
 
-/* Gonzalo: Sección para centrar el texto y los iconos de redes sociales */
 .redes {
-  display: flex;              /* 1. Activa el modo Flexbox */
-  flex-direction: column;     /* 2. Apila los elementos (h3 y los iconos) verticalmente */
-  align-items: center;        /* 3. Centra todo horizontalmente */
-  margin-top: 2rem;           /* 4. Añade espacio para separarlo de arriba */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .redes h3 {
-  margin-bottom: 1rem;        /* 5. Crea espacio entre el título y los iconos */
-  color: var(--white);        /* 6. Asegura que el texto sea blanco */
+  margin-bottom: 1rem;
+  color: var(--dark-bg);
 }
 
 
 /* ==========================================================================
    5. COMPONENTES REUTILIZABLES (Botones, Tarjetas, Formularios)
-   Gonzalo: Estos son los "ladrillos" de tu web. Puedes usarlos en
-   cualquier página y siempre se verán igual.
    ========================================================================== */
 
 /* --- Botones --- */
@@ -170,7 +220,7 @@ footer {
 }
 
 .btn:hover {
-  transform: translateY(-3px) scale(1.05); /* Se eleva y agranda ligeramente */
+  transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -201,12 +251,23 @@ footer {
 }
 
 /* --- Formulario de Contacto --- */
-.contacto-info form {
-  max-width: 500px;
+.contacto-info {
+  max-width: 600px;
   margin: 2rem auto;
+  text-align: center;
+}
+
+.contacto-info form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contacto-info label {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
 .contacto-info input,
@@ -219,6 +280,7 @@ footer {
   background-color: var(--white);
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
 .contacto-info input:focus,
@@ -262,12 +324,11 @@ footer {
 
 /* ==========================================================================
    6. ESTILOS DE SECCIONES ESPECÍFICAS
-   Gonzalo: Aquí van los estilos para cada sección de tus páginas.
    ========================================================================== */
 
 /* --- Sección Hero (Página de Inicio) --- */
 .hero {
-  background: linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.5)), url('img/fondo-briquetas.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.5)), url('proyecto/img/Ecofriendly.jpg') center/cover no-repeat;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -289,51 +350,49 @@ footer {
   margin-bottom: 2rem;
 }
 
-/* --- Sección de Características (Features) - VERSIÓN FINAL Y CORREGIDA --- */
+/* --- Sección de Características (Features) - IMÁGENES AL BORDE --- */
 .features {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
-  gap: 2rem; /* Espacio ENTRE las tarjetas */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0; /* <-- Sin espacio entre tarjetas */
   text-align: center;
-  padding: 4rem 2rem; /* Más padding para que respiren */
+  padding: 4rem 0; /* <-- Sin padding lateral */
   background-color: var(--white);
 }
 
 .features h2 {
-  grid-column: 1 / -1; /* Hace que el título ocupe todo el ancho de la cuadrícula */
+  grid-column: 1 / -1;
   font-size: 2.5rem;
   color: var(--text-dark);
   margin-bottom: 2rem;
+  padding: 0 2rem; /* <-- Padding solo al título */
 }
 
-/* Gonzalo: ESTA ES LA REGLA CLAVE que te faltaba. Estiliza cada tarjeta individual. */
 .feature {
-  background-color: #f9f9f9; /* Un fondo ligeramente gris para cada tarjeta */
-  padding: 2rem;             /* Espacio INTERIOR para que el contenido no toque el borde */
-  border: 1px solid #e0e0e0;  /* El borde que pediste */
-  border-radius: 12px;       /* Bordes redondeados para un look moderno */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Una sombra sutil para que "floten" */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0; /* <-- Sin bordes redondeados */
+  box-shadow: none; /* <-- Sin sombras */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto al pasar el mouse sobre la tarjeta */
 .feature:hover {
-  transform: translateY(-5px); /* Se eleva un poco */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* La sombra se hace más grande */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .feature img {
-  width: 150px;      /* Gonzalo: Ahora las imágenes son más grandes y prominentes */
-  height: 150px;     /* Gonzalo: Puedes cambiar estos dos valores si quieres más o menos tamaño */
-  object-fit: cover; /* Gonzalo: 'cover' asegura que la imagen llene el espacio sin deformarse */
-  border-radius: 10px; /* Gonzalo: Bordes redondeados para que combinen con la tarjeta */
+  width: 100%; /* <-- Imagen al borde */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0; /* <-- Sin bordes redondeados */
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
 }
 
-
 .feature:hover img {
-  transform: scale(1.1); /* El icono crece un poco al pasar el mouse */
+  transform: scale(1.05);
 }
 
 .feature h3 {
@@ -347,7 +406,7 @@ footer {
   line-height: 1.6;
 }
 
-/* --- Sección de Productos --- */
+/* --- Sección de Productos - CON ESPACIOS --- */
 .products {
   padding: 5rem 1.5rem;
   text-align: center;
@@ -357,7 +416,7 @@ footer {
 .products .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
+  gap: 3rem; /* <-- Con espacio entre tarjetas */
   margin-top: 3rem;
   max-width: 1200px;
   margin-left: auto;
@@ -366,8 +425,8 @@ footer {
 
 .product-card {
   background-color: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-radius: 12px; /* <-- Con bordes redondeados */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* <-- Con sombras */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   border-top: 5px solid var(--primary-green);
@@ -410,6 +469,31 @@ footer {
 .cta h2 {
   margin-bottom: 1.5rem;
   font-size: 2rem;
+}
+
+/* --- ESTILOS PARA EL MENSAJE DE ESTADO DEL FORMULARIO --- */
+#form-status {
+  text-align: center;
+  margin: 1.5rem auto 0;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+#form-status.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  opacity: 1;
+}
+
+#form-status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  opacity: 1;
 }
 
 
@@ -509,25 +593,26 @@ main.page-about {
 
 /* ==========================================================================
    9. DISEÑO RESPONSIVO (PARA MÓVILES Y TABLETS)
-   Gonzalo: Todas las reglas que están dentro de @media se aplican
-   SOLO cuando la pantalla es del tamaño especificado o más pequeño.
    ========================================================================== */
 
 /* Para tablets y pantallas pequeñas */
 @media (max-width: 900px) {
   .features {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
   .valores-list {
-    grid-template-columns: 1fr; /* 1 columna para los valores */
+    grid-template-columns: 1fr;
   }
 }
 
 /* Para móviles */
 @media (max-width: 768px) {
-  /* Menú de navegación */
+  header {
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+  }
+
   nav {
-    display: none; /* Oculta el menú normal */
+    display: none; /* Oculta el menú por defecto */
     position: absolute;
     top: 100%;
     right: 0;
@@ -540,27 +625,30 @@ main.page-about {
   }
 
   nav.active {
-    display: flex; /* Muestra el menú cuando se hace clic en el botón */
+    display: flex; /* Muestra el menú cuando tiene la clase 'active' */
   }
 
   .menu-toggle {
-    display: block; /* Muestra el botón de hamburguesa */
+    display: block;
   }
 
-  /* Secciones */
+  /* Asegura que el submenú no se muestre al hacer hover en móvil */
+  nav ul li.dropdown .dropdown-menu {
+    display: none !important;
+  }
+
   .hero h1 {
     font-size: 2.2rem;
   }
 
   .features {
-    grid-template-columns: 1fr; /* 1 sola columna en móvil */
+    grid-template-columns: 1fr;
   }
   
   .features h2 {
     font-size: 2rem;
   }
 
-  /* Página Nosotros */
   .intro .content-wrapper,
   .mision-vision .content-wrapper {
     grid-template-columns: 1fr;
@@ -577,7 +665,7 @@ main.page-about {
     padding: 1rem;
   }
   .logo img {
-    height: 45px; /* Logo más pequeño en móviles */
+    height: 45px;
   }
   .hero {
     height: 60vh;
