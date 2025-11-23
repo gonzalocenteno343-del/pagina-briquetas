@@ -15,7 +15,7 @@
     <nav id="nav-menu" aria-label="Navegación principal">
       <a href="1-inicio.html">Inicio</a>
       <a href="2-productos.html">Productos</a>
-      <a href="4-nosotros.html">Nosotros</a>
+      <a href="4-Quienes Somos.html">Quienes Somos </a>
       <a href="3-contactenos.html" class="active">Contáctenos</a>
     </nav>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
@@ -70,52 +70,6 @@
   </footer>
 
   <script src="script.js" defer></script>
-
-  <!-- 🔸 SCRIPT PARA EL FORMULARIO -->
-  <script>
-    window.addEventListener("DOMContentLoaded", function() {
-      // Obtener el formulario y el div de estado
-      const form = document.getElementById("contact-form");
-      const status = document.getElementById("form-status");
-
-      // Escuchar el evento de envío del formulario
-      form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevenir el envío normal del formulario
-        status.innerHTML = "Enviando..."; // Mensaje mientras se envía
-        status.style.display = "block";
-        status.style.color = "#007bff";
-
-        // Crear una petición para enviar los datos del formulario
-        const data = new FormData(event.target);
-        
-        fetch(event.target.action, {
-          method: form.method,
-          body: data,
-          headers: {
-              'Accept': 'application/json'
-          }
-        }).then(response => {
-          if (response.ok) {
-            status.innerHTML = "¡Gracias! Tu mensaje ha sido enviado con éxito.";
-            status.style.color = "green";
-            form.reset(); // Limpiar los campos del formulario
-          } else {
-            response.json().then(data => {
-              if (Object.hasOwn(data, 'errors')) {
-                status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-              } else {
-                status.innerHTML = "Oops! Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.";
-              }
-              status.style.color = "red";
-            })
-          }
-        }).catch(error => {
-          status.innerHTML = "Oops! Hubo un problema de conexión. Inténtalo de nuevo.";
-          status.style.color = "red";
-        });
-      });
-    });
-  </script>
 
 </body>
 </html>
