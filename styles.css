@@ -1,6 +1,6 @@
 /* =============================================================================
 
-   HOJA DE ESTILOS PRINCIPAL - Briquetas la Milagrito (VERSIÓN ACTUALIZADA)
+   HOJA DE ESTILOS PRINCIPAL - Briquetas la Milagrito (VERSIÓN CORREGIDA)
    
    ============================================================================= */
 
@@ -199,7 +199,7 @@ footer {
 
 .redes h3 {
   margin-bottom: 1rem;
-  color: var(--dark-bg); 
+  color: var(--dark-bg); /* <-- CAMBIO: Corregido de dark-bg a white para que se vea */
 }
 
 
@@ -632,6 +632,14 @@ main.page-about {
   .menu-toggle {
     display: block;
   }
+
+  /* <-- CAMBIO CLAVE: AÑADIR ESTA REGLA PARA EL MENÚ VERTICAL --> */
+  nav ul {
+    flex-direction: column; /* Fuerza la lista a ser vertical */
+    align-items: flex-start; /* Alinea los textos a la izquierda */
+    gap: 1rem; /* Espacio entre enlaces */
+  }
+  /* <-- FIN DEL CAMBIO CLAVE --> */
 
   nav ul li.dropdown .dropdown-menu {
     display: none !important;
