@@ -18,25 +18,28 @@
   <header>
     
     <!-- Aqui gonzalo es para que el logo aparezca en la barra de arriba y que al tocarlo se devuelva al inicio xd-->
-    <a href="1-inicio.html" class="logo">
+    <a href="01-Index.html" class="logo">
   <img src="proyecto/img/LOGO REAL.png" alt="Briquetas la Milagrito">
 </a>
 
 <nav id="nav-menu" aria-label="Navegación principal">
     <ul>
-        <li><a href="01-Inicio.html">Inicio</a></li>
+        <li><a href="01-Index.html">Inicio</a></li>
         <li><a href="1-Quienes Somos.html">Quienes Somos</a></li>
         <li><a href="2-RSE.html">Responsabilidad Social</a></li>
         
         <!-- Aquí empieza el menú desplegable para "Productos" -->
-        <li class="dropdown">
-            <a href="3-Productos.Html" class="active">Productos</a>
-            <ul class="dropdown-menu">
-                <li><a href="3-Productos.Html#briqueta">Briqueta de 10kg</a></li>
-                <li><a href="3-Productos.Html#carbon">Carbón Vegetal 25kg</a></li>
-                <li><a href="3-Productos.Html#ferti">Ferti Carbon</a></li>
-            </ul>
-        </li>
+<li class="dropdown">
+    <a class="dropdown-toggle" role="button" tabindex="0">
+        Productos <i class="fas fa-chevron-down"></i>
+    </a>
+    <ul class="dropdown-menu">
+        <li><a href="1-Briqueta de 10kg.html">Briqueta de 10kg</a></li>
+        <li><a href="2-Carbon Vegetal 25kg.html">Carbón Vegetal 25kg</a></li>
+        <li><a href="3-Ferti Carbon.html">Ferti Carbon</a></li>
+    </ul>
+</li>
+<!-- Fin del menú desplegable -->
         <!-- Fin del menú desplegable -->
         <li><a href="4-Contactenos.Html">Contactenos</a></li>
     </ul>
@@ -52,26 +55,32 @@
     <section class="products">
       <h1>Nuestros Productos</h1>
       <div class="product-grid">
-        <!-- Producto 1 con Imagen de Prueba -->
-        <article class="product-card" itemscope itemtype="http://schema.org/Product">
-          <img src="proyecto/img/Briquetas0.jpg" alt="Foto de la Briqueta Estándar" itemprop="image" />
-          <h2 itemprop="name">Briqueta de 10kg</h2>
-          <p itemprop="description">Eficiente y duradera. Ideal para hogares y restaurantes.</p>
-        </article>
+        <!-- Producto 1 -->
+        <a href="productos/1-Briqueta de 10kg.html" class="product-link">
+          <article class="product-card" itemscope itemtype="http://schema.org/Product">
+            <img src="proyecto/img/Briquetas0.jpg" alt="Foto de la Briqueta Estándar" itemprop="image" />
+            <h2 itemprop="name">Briqueta de 10kg</h2>
+            <p itemprop="description">Eficiente y duradera. Ideal para hogares y restaurantes.</p>
+          </article>
+        </a>
         
-        <!-- Producto 2 con Imagen de Prueba -->
-        <article class="product-card" itemscope itemtype="http://schema.org/Product">
-          <img src="proyecto/img/Briquetas03.jpg" alt="Foto de la Briqueta Premium" itemprop="image" />
-          <h2 itemprop="name">Carbon Vegetal 25kg </h2>
-          <p itemprop="description">Mayor densidad, encendido rápido y baja emisión de humo.</p>
-        </article>
+        <!-- Producto 2 -->
+        <a href="productos/2-Carbon Vegetal 25kg.html" class="product-link">
+          <article class="product-card" itemscope itemtype="http://schema.org/Product">
+            <img src="proyecto/img/Briquetas03.jpg" alt="Foto del Carbón Vegetal" itemprop="image" />
+            <h2 itemprop="name">Carbon Vegetal 25kg</h2>
+            <p itemprop="description">Mayor densidad, encendido rápido y baja emisión de humo.</p>
+          </article>
+        </a>
         
-        <!-- Producto 3 con Imagen de Prueba -->
-        <article class="product-card" itemscope itemtype="http://schema.org/Product">
-          <img src="proyecto/img/Briquetas02.jpg" alt="Foto de la Briqueta para Exportación" itemprop="image" />
-          <h2 itemprop="name">Ferti Carbon </h2>
-          <p itemprop="description">Calidad ambiental directa a sus manos.</p>
-        </article>
+        <!-- Producto 3 -->
+        <a href="productos/3-Ferti Carbon.html" class="product-link">
+          <article class="product-card" itemscope itemtype="http://schema.org/Product">
+            <img src="proyecto/img/Briquetas02.jpg" alt="Foto de Ferti Carbon" itemprop="image" />
+            <h2 itemprop="name">Ferti Carbon</h2>
+            <p itemprop="description">Calidad ambiental directa a sus manos.</p>
+          </article>
+        </a>
       </div>
     </section>
   </main>

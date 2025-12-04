@@ -1,6 +1,6 @@
 /* =============================================================================
 
-   HOJA DE ESTILOS PRINCIPAL - Briquetas la Milagrito (VERSIÓN FINAL)
+   HOJA DE ESTILOS PRINCIPAL - Briquetas la Milagrito (VERSIÓN ACTUALIZADA)
    
    ============================================================================= */
 
@@ -56,6 +56,11 @@ header {
   z-index: 1000;
   box-shadow: var(--shadow);
   transition: all 0.3s ease;
+  /* Forzar a que ocupe todo el ancho */
+  width: 100vw;
+  left: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .logo {
@@ -101,42 +106,34 @@ nav ul li a::after {
   transition: width 0.3s ease;
 }
 
-nav ul li a:hover::after,
-nav ul li a.active::after {
+nav ul li a:hover::after {
   width: 100%;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-  color: var(--accent-color);
-}
-
-/* --- ESTILOS DEL MENÚ DESPLEGABLE (DROPDOWN) - ESTILO VERDE/BLANCO --- */
+/* --- ESTILOS DEL MENÚ DESPLEGABLE (DROPDOWN) --- */
 nav ul li.dropdown {
   position: relative;
 }
 
 nav ul li.dropdown .dropdown-menu {
-  /* Ocultar el menú por defecto en todas las pantallas */
-  display: none;
+  display: none; /* Oculto por defecto */
   position: absolute;
   top: 100%;
-  right: 0; /* Se alinea a la derecha como en tu código original */
-  background-color: var(--white); /* Fondo blanco */
+  right: 0;
+  background-color: var(--white);
   min-width: 220px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil */
-  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 8px;
   z-index: 1001;
 }
 
-/* Mostrar el menú al pasar el ratón SOLO en pantallas más grandes que 768px */
+/* Mostrar menú al pasar el ratón (solo en escritorio) */
 @media (min-width: 769px) {
   nav ul li.dropdown:hover .dropdown-menu {
-    display: block; /* Esto hace que el menú aparezca */
+    display: block;
   }
 }
 
-/* Estilos para los elementos dentro del menú desplegable */
 nav ul li.dropdown .dropdown-menu li {
   width: 100%;
 }
@@ -144,7 +141,7 @@ nav ul li.dropdown .dropdown-menu li {
 nav ul li.dropdown .dropdown-menu li a {
   display: block;
   padding: 15px;
-  color: var(--primary-green); /* <-- LETRA VERDE POR DEFECTO */
+  color: var(--primary-green); /* Letra verde por defecto */
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 8px;
@@ -152,13 +149,12 @@ nav ul li.dropdown .dropdown-menu li a {
 }
 
 nav ul li.dropdown .dropdown-menu li a::after {
-  display: none; /* Quita la línea de subrayado animada para los items del submenú */
+  display: none; /* Sin línea de subrayado en submenú */
 }
 
-/* Efecto al pasar el ratón: Fondo Verde y Letra Blanca */
 nav ul li.dropdown .dropdown-menu li a:hover {
-  background-color: var(--primary-green); /* <-- FONDO VERDE AL PASAR EL RATÓN */
-  color: var(--white); /* <-- LETRA BLANCA AL PASAR EL RATÓN */
+  background-color: var(--primary-green); /* Fondo verde al hover */
+  color: var(--white); /* Letra blanca al hover */
 }
 
 /* --- BOTÓN DE MENÚ MÓVIL --- */
@@ -187,6 +183,11 @@ footer {
   padding: 2rem;
   margin-top: 3rem;
   border-top: 3px solid var(--primary-green);
+  /* Forzar a que ocupe todo el ancho */
+  width: 100vw;
+  left: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .redes {
@@ -198,7 +199,7 @@ footer {
 
 .redes h3 {
   margin-bottom: 1rem;
-  color: var(--dark-bg);
+  color: var(--dark-bg); 
 }
 
 
@@ -354,9 +355,9 @@ footer {
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0; /* <-- Sin espacio entre tarjetas */
+  gap: 0;
   text-align: center;
-  padding: 4rem 0; /* <-- Sin padding lateral */
+  padding: 4rem 0;
   background-color: var(--white);
 }
 
@@ -365,15 +366,15 @@ footer {
   font-size: 2.5rem;
   color: var(--text-dark);
   margin-bottom: 2rem;
-  padding: 0 2rem; /* <-- Padding solo al título */
+  padding: 0 2rem;
 }
 
 .feature {
   background-color: #f9f9f9;
   padding: 2rem;
   border: 1px solid #e0e0e0;
-  border-radius: 0; /* <-- Sin bordes redondeados */
-  box-shadow: none; /* <-- Sin sombras */
+  border-radius: 0;
+  box-shadow: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -383,10 +384,10 @@ footer {
 }
 
 .feature img {
-  width: 100%; /* <-- Imagen al borde */
+  width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 0; /* <-- Sin bordes redondeados */
+  border-radius: 0;
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
 }
@@ -416,7 +417,7 @@ footer {
 .products .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem; /* <-- Con espacio entre tarjetas */
+  gap: 3rem;
   margin-top: 3rem;
   max-width: 1200px;
   margin-left: auto;
@@ -425,8 +426,8 @@ footer {
 
 .product-card {
   background-color: var(--white);
-  border-radius: 12px; /* <-- Con bordes redondeados */
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* <-- Con sombras */
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   border-top: 5px solid var(--primary-green);
@@ -608,11 +609,11 @@ main.page-about {
 /* Para móviles */
 @media (max-width: 768px) {
   header {
-    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    flex-wrap: wrap;
   }
 
   nav {
-    display: none; /* Oculta el menú por defecto */
+    display: none;
     position: absolute;
     top: 100%;
     right: 0;
@@ -625,14 +626,13 @@ main.page-about {
   }
 
   nav.active {
-    display: flex; /* Muestra el menú cuando tiene la clase 'active' */
+    display: flex;
   }
 
   .menu-toggle {
     display: block;
   }
 
-  /* Asegura que el submenú no se muestre al hacer hover en móvil */
   nav ul li.dropdown .dropdown-menu {
     display: none !important;
   }
@@ -670,4 +670,42 @@ main.page-about {
   .hero {
     height: 60vh;
   }
+}
+
+/* ==========================================================================
+   10. ESTILOS PARA TARJETAS DE PRODUCTO (EVITAR ENLACES AZULES)
+   ========================================================================== */
+.product-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card {
+  height: 100%;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   11. ESTILOS PARA ENLACES ACTIVOS (CORREGIDO Y LIMPIO)
+   ========================================================================== */
+
+/* 1. ESTA REGLA HACE QUE "PRODUCTOS" Y OTROS ENLACES PRINCIPALES SE PONGAN AMARILLOS */
+nav ul li > a.active {
+  color: var(--accent-color); /* AMARILLO */
+}
+
+/* 2. ESTA REGLA HACE QUE EL ENLACE ESPECÍFICO DEL SUBMENÚ SE PONGA VERDE */
+/* Es más específica, por lo que sobreescribe a la anterior para los items del dropdown */
+nav ul li.dropdown .dropdown-menu li a.active {
+  color: var(--primary-green); /* VERDE */
+  background-color: var(--dark-bg); /* Fondo oscuro para contraste */
+  font-weight: bold;
 }
